@@ -28,7 +28,7 @@ public class Pair<F,S> {
     public static <F,S> Pair<F,S> of(F first, S second) {
         return new Pair<F,S>(first, second);
     }
-    public void ifPresent(BiConsumer consumer) {
+    public void ifPresent(BiConsumer<? super F, ? super S> consumer) {
         if(first != null && second != null){
             consumer.accept(first, second);
         }
